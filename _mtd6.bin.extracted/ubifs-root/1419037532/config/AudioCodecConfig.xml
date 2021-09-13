@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<audioCodecDefConfig class_id="0" tracking_level="0" version="0">
+	<sampleSize>16</sampleSize>
+	<speed>8000</speed>
+	<inputDevice>0</inputDevice>
+	<isEnableStereo>0</isEnableStereo>
+	<inputGain>70</inputGain>
+	<volume>100</volume>
+	<isEnableBTL>0</isEnableBTL>
+	<isInputMute>0</isInputMute>
+	<isOutputMute>0</isOutputMute>
+	<isEnableAudioAlarm>0</isEnableAudioAlarm>
+	<audioAlarmSensitivity>3</audioAlarmSensitivity>
+	<schedule>
+		<count>7</count>
+		<item>281474976710655</item>
+		<item>281474976710655</item>
+		<item>281474976710655</item>
+		<item>281474976710655</item>
+		<item>281474976710655</item>
+		<item>281474976710655</item>
+		<item>281474976710655</item>
+	</schedule>
+	<linkage>142</linkage>
+	<triggerInterval>15</triggerInterval>
+	<snapInterval>2</snapInterval>
+	<voiceEnable>1</voiceEnable>
+</audioCodecDefConfig>

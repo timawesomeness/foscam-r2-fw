@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<mConfig class_id="0" tracking_level="0" version="0">
+	<mode>2</mode>
+	<state>0</state>
+	<scheduleLedCfg>
+		<count>3</count>
+		<item class_id="1" tracking_level="0" version="0">
+			<startTimeHour>8</startTimeHour>
+			<startTimeMin>0</startTimeMin>
+			<endTimeHour>18</endTimeHour>
+			<endTimeMin>0</endTimeMin>
+		</item>
+		<item>
+			<startTimeHour>0</startTimeHour>
+			<startTimeMin>0</startTimeMin>
+			<endTimeHour>0</endTimeHour>
+			<endTimeMin>0</endTimeMin>
+		</item>
+		<item>
+			<startTimeHour>0</startTimeHour>
+			<startTimeMin>0</startTimeMin>
+			<endTimeHour>0</endTimeHour>
+			<endTimeMin>0</endTimeMin>
+		</item>
+	</scheduleLedCfg>
+	<ledEnable>1</ledEnable>
+</mConfig>

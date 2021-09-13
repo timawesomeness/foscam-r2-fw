@@ -1,0 +1,233 @@
+#!/bin/sh
+
+#########################################
+##gaw write for upgrade Kernel and Rootfs
+#########################################
+
+KERNEL_MTD="pri"
+ROOTFS_MTD="lnx"
+ADC_PART_MTD="adc"
+
+MTD_ERASE="flash_eraseall"
+MTD_WRITE="/usr/local/bin/upgrade_partition"
+
+
+ROOTFS_IMAGE_PATH="/mnt/adc/ubifs"
+KERNEL_IMAGE_PATH="/mnt/adc/Image"
+
+
+ADC_MTD_NUM=`cat /proc/mtd | grep ${ADC_PART_MTD} | awk '{print $1}' | sed -e s/://`
+ADC_MTDBLOCK_NUM=mtdblock$(cat /proc/mtd | grep ${ADC_PART_MTD} | awk '{print $1}' | sed -re 's/[^0-9]*([0-9]*).*$/\1/;')	
+
+ADC_NUM=$(cat /proc/mtd | grep ${ADC_PART_MTD} | awk '{print $1}' | sed -re 's/[^0-9]*([0-9]*).*$/\1/;')
+
+#echo "${ADC_PART_MTD} is ${ADC_MTD_NUM}"  
+#echo "mtdblock adc is ${ADC_MTDBLOCK_NUM}"  	
+
+mkdir -p /mnt/adc
+mknod /dev/ubi_ctrl c 10 60
+ubiattach /dev/ubi_ctrl -m ${ADC_NUM} -d 1
+#mount -t jffs2 /dev/${ADC_MTDBLOCK_NUM} /mnt/adc	
+mount -t ubifs ubi1_1 /mnt/adc
+
+
+#############################
+## check kernel size
+#############################
+
+check_kernel_size()
+{	
+	KERNEL_MTD_NUM=`cat /proc/mtd | grep ${KERNEL_MTD} | awk '{print $1}' | sed -e s/://`
+#	echo "${KERNEL_MTD} is ${KERNEL_MTD_NUM}"
+	
+	KERNEL_SIZE=`cat /proc/mtd | grep ${KERNEL_MTD} | awk '{print $2}'`
+	echo $((KERNEL_SIZE=0x${KERNEL_SIZE}))	
+	
+	KERNEL_SIZE=`expr ${KERNEL_SIZE} / 1024 / 1024`	
+#	echo "${KERNEL_MTD} size is ${KERNEL_SIZE} M"	
+	echo "System firmware partition maxsize is ${KERNEL_SIZE} M"	
+	
+	KERNEL_IMAGE_SIZE=`du -m ${KERNEL_IMAGE_PATH} | awk '{print $1}'`
+#	echo "${KERNEL_IMAGE_PATH} size is ${KERNEL_IMAGE_SIZE} M"	
+	echo "System firmware size is ${KERNEL_IMAGE_SIZE} M"	
+	
+	if [ ${KERNEL_IMAGE_SIZE} -gt ${KERNEL_SIZE} ] ; then
+		echo "${KERNEL_IMAGE_PATH} is larger than the partition size"
+		exit 1	
+	fi
+}
+
+
+#############################
+## update kernel image
+#############################
+
+update_kernel_image()
+{	
+	echo "start update system firmware..."
+	echo "start erase system partition..."
+
+	${MTD_ERASE} /dev/${KERNEL_MTD_NUM}
+	if [ $? -ne 0 ];then
+		echo "erase falsh ${KERNEL_MTD_NUM} failed"
+		return 1 
+	fi
+
+	echo "start write image to system partition..."
+#	echo "${MTD_WRITE} -p --${KERNEL_MTD}  /dev/${KERNEL_MTD_NUM} ${KERNEL_IMAGE_PATH}"
+	${MTD_WRITE} -p --${KERNEL_MTD} /dev/${KERNEL_MTD_NUM} ${KERNEL_IMAGE_PATH} -q
+	
+	if [ $? -ne 0 ];then               
+#                echo "write System Firmware to flash ${KERNEL_MTD_NUM} failed!"
+                echo "write System Firmware to flash failed!!"
+                return 1                                   
+        else
+#		echo "write Image to falsh ${KERNEL_MTD_NUM} success!"
+		return 0
+	fi
+}
+
+#############################
+## check rootfs size
+#############################
+
+check_rootfs_size()
+{
+	MTD_CMD=`/usr/local/bin/upgrade_partition --show_info | grep cmdline`
+	MTD_CMD=`echo ${MTD_CMD:10}`
+#	ROOTFS_MTD=`echo ${MTD_CMD} | awk '{print $2}' | sed -e s/^ubi.mtd=//`	
+#	PREV_ROOTFS=${ROOTFS_MTD}	
+	
+#	if [ ${ROOTFS_MTD} == ${ORIGNAL_ROOTFS} ] ; then
+#		ROOTFS_MTD=${SECOND_ROOTFS}	
+#	else
+#		ROOTFS_MTD=${ORIGNAL_ROOTFS}
+#	fi	
+	
+	ROOTFS_MTD_NUM=`cat /proc/mtd | grep ${ROOTFS_MTD} | awk '{print $1}' | sed -e s/://`
+#	echo "${ROOTFS_MTD} is ${ROOTFS_MTD_NUM}"	
+
+	ROOTFS_SIZE=`cat /proc/mtd | grep ${ROOTFS_MTD} | awk '{print $2}'`
+	echo $((ROOTFS_SIZE=0x${ROOTFS_SIZE}))
+
+	ROOTFS_SIZE=`expr ${ROOTFS_SIZE} / 1024 / 1024`
+#	echo "${ROOTFS_MTD} size is ${ROOTFS_SIZE} M"	
+	echo "App firmware partition maxsize is ${ROOTFS_SIZE} M"	
+	
+	ROOTFS_IMAGE_SIZE=`du -m ${ROOTFS_IMAGE_PATH} | awk '{print $1}'`
+#	echo "${ROOTFS_IMAGE_PATH} size is ${ROOTFS_IMAGE_SIZE} M"	
+	echo "App firmware partition size is ${ROOTFS_IMAGE_SIZE} M"	
+	
+	if [ ${ROOTFS_IMAGE_SIZE} -gt ${ROOTFS_SIZE} ] ; then
+		echo "${ROOTFS_IMAGE_PATH} is larger than the partition size"	
+		exit 1	
+	fi
+}
+
+#############################
+##update rootfs image
+#############################
+
+
+update_rootfs_image()                                                                                                    
+{                                                                                                                        
+#        echo "${MTD_ERASE} /dev/${ROOTFS_MTD_NUM}"                                                                       
+        echo "start update app firmware..."                                                                       
+        echo "start erase app partition..."                                                                       
+        ${MTD_ERASE} /dev/${ROOTFS_MTD_NUM}                                                                              
+                                                                                     
+        if [ $? -ne 0 ];then                                                                 
+                echo "erase flash ${ROOTFS_MTD_NUM} failed"                                  
+                return 1                                                                     
+        fi
+
+        echo "start write image to app partition..."                                                                       
+#	echo "${MTD_WRITE} -p --${ROOTFS_MTD} /dev/${ROOTFS_MTD_NUM} ${ROOTFS_IMAGE_PATH} -F 1"                      
+        ${MTD_WRITE} -p --${ROOTFS_MTD} /dev/${ROOTFS_MTD_NUM} ${ROOTFS_IMAGE_PATH} -F 1 -q                            
+	
+	if [ $? -ne 0 ];then                                                                   
+#                echo "write ubifs to flash ${ROOTFS_MTD_NUM} failed!"                          
+                echo "write App Firmware to flash failed!!"                          
+                return 1                                                                       
+        else                                                                                   
+#                echo "write ubifs to flash ${ROOTFS_MTD_NUM} success!"                               
+                return 0                                                                       
+        fi
+}
+
+
+boot_from_pri()
+{                                                                                                    
+#        echo "${MTD_WRITE} --boot_from 0 -q"  
+        ${MTD_WRITE} --boot_from 0 -q         
+}
+
+
+
+if [ ! -r ${ROOTFS_IMAGE_PATH} ] ; then	
+#	echo "can't find Rootfs image:ubifs,try to use Kernel image."
+	if [ ! -r ${KERNEL_IMAGE_PATH} ] ; then
+#		echo "can't find Kernel image:Image,now reboot normal system!"
+		echo "can't find System and App Firmware image,now reboot normal system!"
+		boot_from_pri
+		reboot
+	else
+		echo "System firmware find,use it to upgrade!"
+		check_kernel_size
+		
+		for i in `seq 1 4`
+		do
+			if [ $i -eq 4 ] ; then
+				break
+			fi
+			update_kernel_image
+			if [ $? -eq 0 ] ; then
+				break
+			fi
+		done
+
+		if [ $i -lt 4 ] ; then
+			boot_from_pri
+        		echo "try times:$i,upgrade system firmware success! now reboot!"
+		else
+        		echo "try times:$i,upgrade system firmware failed! now reboot!"
+		fi
+		reboot
+	fi	
+else	  
+	echo "App firmware find,use it to upgrade."	
+	
+	check_rootfs_size
+	
+	for i in `seq 1 4`                                                             
+        do                                                                             
+             if [ $i -eq 4 ] ; then                                                 
+                 break                                                        
+             fi                 
+                                                  
+             update_rootfs_image  
+                                                  
+             if [ $? -eq 0 ] ; then                                                 
+                 break                                                          
+             fi                                                                     
+        done                                                                           
+                                                                                                     
+        if [ $i -lt 4 ] ; then                                                         
+             boot_from_pri                                                          
+             echo "try times:$i,upgrade App firmware success! now reboot!"                
+        else                                                                           
+             echo "try times:$i,upgrade App firmware failed! now reboot!"                 
+        fi                                                                             
+
+	reboot
+fi
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<mConfig class_id="0" tracking_level="0" version="0">
+	<ispConfig class_id="1" tracking_level="0" version="0">
+		<imgEnhanceConfig class_id="2" tracking_level="0" version="0">
+			<brightness>50</brightness>
+			<contrast>55</contrast>
+			<hue>55</hue>
+			<saturation>20</saturation>
+			<sharpness>55</sharpness>
+			<denoise>50</denoise>
+		</imgEnhanceConfig>
+		<wbConfig class_id="3" tracking_level="0" version="0">
+			<isAwbEnable>1</isAwbEnable>
+			<wbMode>0</wbMode>
+		</wbConfig>
+		<aeConfig class_id="4" tracking_level="0" version="0">
+			<isAEEnable>1</isAEEnable>
+			<EVMode>0</EVMode>
+			<pwr_freq>0</pwr_freq>
+		</aeConfig>
+		<sensorConfig class_id="5" tracking_level="0" version="0">
+			<mirror>0</mirror>
+			<flip>0</flip>
+		</sensorConfig>
+	</ispConfig>
+	<motionDectionConfig class_id="6" tracking_level="0" version="0">
+		<isEnable>0</isEnable>
+		<isMovAlarmEnable>1</isMovAlarmEnable>
+		<isPirAlarmEnable>0</isPirAlarmEnable>
+		<schedule>
+			<count>7</count>
+			<item>281474976710655</item>
+			<item>281474976710655</item>
+			<item>281474976710655</item>
+			<item>281474976710655</item>
+			<item>281474976710655</item>
+			<item>281474976710655</item>
+			<item>281474976710655</item>
+		</schedule>
+		<linkage>142</linkage>
+		<snapInterval>2</snapInterval>
+		<triggerInterval>15</triggerInterval>
+		<roiInfo>
+			<count>4</count>
+			<item class_id="7" tracking_level="0" version="0">
+				<x>0</x>
+				<y>0</y>
+				<width>10000</width>
+				<height>10000</height>
+				<threshold>50</threshold>
+				<sensitivity>0</sensitivity>
+				<valid>1</valid>
+			</item>
+			<item>
+				<x>0</x>
+				<y>0</y>
+				<width>0</width>
+				<height>0</height>
+				<threshold>0</threshold>
+				<sensitivity>0</sensitivity>
+				<valid>0</valid>
+			</item>
+			<item>
+				<x>0</x>
+				<y>0</y>
+				<width>0</width>
+				<height>0</height>
+				<threshold>0</threshold>
+				<sensitivity>0</sensitivity>
+				<valid>0</valid>
+			</item>
+			<item>
+				<x>0</x>
+				<y>0</y>
+				<width>0</width>
+				<height>0</height>
+				<threshold>0</threshold>
+				<sensitivity>0</sensitivity>
+				<valid>0</valid>
+			</item>
+		</roiInfo>
+	</motionDectionConfig>
+	<scheduleSnapConfig class_id="8" tracking_level="0" version="0">
+		<isEnable>0</isEnable>
+		<snapInterval>2</snapInterval>
+		<schedule>
+			<count>7</count>
+			<item>0</item>
+			<item>0</item>
+			<item>0</item>
+			<item>0</item>
+			<item>0</item>
+			<item>0</item>
+			<item>0</item>
+		</schedule>
+	</scheduleSnapConfig>
+	<videoStreamConfig>
+		<count>4</count>
+		<item class_id="9" tracking_level="0" version="0">
+			<resolution>7</resolution>
+			<rateControlMode>1</rateControlMode>
+			<frameRate>25</frameRate>
+			<bitRate>2097152</bitRate>
+			<I_P_interval>25</I_P_interval>
+			<lbrRatio>50</lbrRatio>
+		</item>
+		<item>
+			<resolution>0</resolution>
+			<rateControlMode>1</rateControlMode>
+			<frameRate>15</frameRate>
+			<bitRate>524288</bitRate>
+			<I_P_interval>30</I_P_interval>
+			<lbrRatio>50</lbrRatio>
+		</item>
+		<item>
+			<resolution>1</resolution>
+			<rateControlMode>1</rateControlMode>
+			<frameRate>15</frameRate>
+			<bitRate>262144</bitRate>
+			<I_P_interval>30</I_P_interval>
+			<lbrRatio>50</lbrRatio>
+		</item>
+		<item>
+			<resolution>7</resolution>
+			<rateControlMode>1</rateControlMode>
+			<frameRate>25</frameRate>
+			<bitRate>4194304</bitRate>
+			<I_P_interval>30</I_P_interval>
+			<lbrRatio>50</lbrRatio>
+		</item>
+	</videoStreamConfig>
+	<mainStreamType>0</mainStreamType>
+	<subStreamType>0</subStreamType>
+	<subStreamFormat>0</subStreamFormat>
+	<recordStreamType>0</recordStreamType>
+	<snapConfig class_id="10" tracking_level="0" version="0">
+		<snapPicQuality>1</snapPicQuality>
+		<saveLocation>0</saveLocation>
+	</snapConfig>
+	<H264FrmRefMode>0</H264FrmRefMode>
+	<videoSubStreamConfig>
+		<count>4</count>
+		<item class_id="11" tracking_level="0" version="0">
+			<resolution>0</resolution>
+			<rateControlMode>0</rateControlMode>
+			<frameRate>11</frameRate>
+			<bitRate>524288</bitRate>
+			<I_P_interval>15</I_P_interval>
+			<lbrRatio>50</lbrRatio>
+		</item>
+		<item>
+			<resolution>1</resolution>
+			<rateControlMode>0</rateControlMode>
+			<frameRate>15</frameRate>
+			<bitRate>262144</bitRate>
+			<I_P_interval>15</I_P_interval>
+			<lbrRatio>50</lbrRatio>
+		</item>
+		<item>
+			<resolution>2</resolution>
+			<rateControlMode>0</rateControlMode>
+			<frameRate>15</frameRate>
+			<bitRate>262144</bitRate>
+			<I_P_interval>15</I_P_interval>
+			<lbrRatio>50</lbrRatio>
+		</item>
+		<item>
+			<resolution>1</resolution>
+			<rateControlMode>0</rateControlMode>
+			<frameRate>15</frameRate>
+			<bitRate>524288</bitRate>
+			<I_P_interval>15</I_P_interval>
+			<lbrRatio>50</lbrRatio>
+		</item>
+	</videoSubStreamConfig>
+	<ratioConfig class_id="12" tracking_level="0" version="0">
+		<ratio>430</ratio>
+	</ratioConfig>
+	<HDRConfig class_id="13" tracking_level="0" version="0">
+		<HDR>0</HDR>
+	</HDRConfig>
+	<deframeLevel>0</deframeLevel>
+	<AutoAdjust>0</AutoAdjust>
+	<snapToFtpConfig class_id="14" tracking_level="0" version="0">
+		<isEnableSetFilename>0</isEnableSetFilename>
+		<fileName></fileName>
+	</snapToFtpConfig>
+	<WDRConfig class_id="15" tracking_level="0" version="0">
+		<WDR>0</WDR>
+	</WDRConfig>
+	<CloudStreamLevel>90</CloudStreamLevel>
+	<humanDetectionConfig class_id="16" tracking_level="0" version="0">
+		<isEnable>1</isEnable>
+		<settingType>0</settingType>
+		<sensitivity>80</sensitivity>
+		<isHumanCountEnable>1</isHumanCountEnable>
+		<HumanNumber>0</HumanNumber>
+		<cameraAngle>1</cameraAngle>
+		<linkage>142</linkage>
+		<snapInterval>2</snapInterval>
+		<schedule>
+			<count>7</count>
+			<item>281474976710655</item>
+			<item>281474976710655</item>
+			<item>281474976710655</item>
+			<item>281474976710655</item>
+			<item>281474976710655</item>
+			<item>281474976710655</item>
+			<item>281474976710655</item>
+		</schedule>
+		<triggerInterval>5</triggerInterval>
+		<isHumanBoxingEnable>1</isHumanBoxingEnable>
+	</humanDetectionConfig>
+</mConfig>

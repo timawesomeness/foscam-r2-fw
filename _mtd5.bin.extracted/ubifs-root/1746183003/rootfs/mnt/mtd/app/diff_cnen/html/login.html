@@ -1,0 +1,85 @@
+<div style="height:65px;background:url(../images/login-logo-bg.png);" > 
+    <div style="float:left;width:280px;height:65px;background:url(../images/login-logo.png);"></div>
+    <!-- <div id="loginword" style="float:left;font-size:15px; margin-left:10px; line-height:79px; color:#8fc7e0;glow(color=#ffff00,strength=4);"></div> -->
+	<DIV id="loginword" style="float:right;FONT-SIZE:30px;margin-right:40px;line-height:70px; COLOR:#606a73; text-shadow:d1; FONT-FAMILY:Arial; font-weight:bolder;"></DIV>
+</div>
+<div style="height:100px;" id="blank100"></div>
+<center>
+    <div id="downPlugins" style="height:30px;font-family:Arial;font-size:15px;"></div>
+    <div id="helpInformation" style="height:30px;font-family:Arial;font-size:15px;"></div>
+    <div style="height:400px; width:480px;"><!-- style="border:solid 2px #ffffff;" -->
+        <div style="height:400px;width:480px;background:url(../images/1.png);">
+            <div style="text-align:center;padding:1px;">
+                <table align="center" style="margin-top:30px;font-size:17px; width:380px; text-align:left;font-family:Arial;">
+    	            <tr height="55" style="border:1px #ffffff solid;">
+    		            <td id="usernames" width="130" style="text-align:right;padding-right:20px;"></td>
+    		            <td><input id="username"  value="admin" maxlength="20" style="width:125px;"/></td>
+    	            </tr>
+                    <tr height="55">
+                        <td id="password" style="text-align:right;padding-right:20px;"></td>
+                        <td><input id="passwd" maxlength="12" type="password" onkeypress="detectCapsLock1(event)" style="width:125px;"/>
+                            <div id="CapsLockTips1" class="CapsLockTip" style="display:none;"></div>
+                            <div id="trigger1" class="triggerTop" style="display:none;"></div>
+                        </td>
+                    </tr>
+                    <tr height="45" style="display:none">
+                        <td id="streamport" style="text-align:right;padding-right:20px;"></td>
+                        <td><input id="mediaPort" maxlength="5" type="text" onkeyup="rpPos(this,/[^0-9]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^0-9]/g,''))" style="width:125px;" disabled="disabled" /></td>
+                    </tr>
+                    <tr height="55">
+                        <td id="streamcode" style="text-align:right;padding-right:20px;"></td>
+                        <td>
+                            <div>
+                                <select id="login_ml" style="width:130px;">
+                                    <option value="0"></option>
+                                    <option value="1" id="login_subStream"></option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr height="55">
+                        <td id="language" style="text-align:right;padding-right:20px;"></td>
+                        <td>
+                            <div>
+                                <select id="login_language" disabled="disabled" style="width:130px;"></select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr height="45" style="display:none;">
+                        <td colspan="2">
+                            <input id="remenberText" type="checkbox"/>
+                            <label id ="rememberPS"></label>
+                            &nbsp;&nbsp;&nbsp;
+                            <input id="openPreview" type="checkbox" checked="checked"/>
+                            <label id ="openpiew"></label>
+                        </td>
+                    </tr>
+                </table>
+                <div style="width:100%; margin-top:5px;float:left;font-family:Arial;text-align:center;">
+                    <table align="right">
+                        <tr>
+                            <td style="width:100%;padding-right:50px;padding-top:10px;">
+                                <div class="loginBtn" id="login_ok" onclick="onLogin()" style="margin-left:5px;" style="float:right;margin-right:100px;"></div>
+                            </td>
+                            <td style="display:none;">
+                                <div class="loginBtn" id="login_reset" onclick="Reset()" style="float:right;"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+	        </div>
+        </div>
+        <!--<div style="height:5px; overflow:hidden;"></div>-->
+    </div>
+    <div id="divUpFWTips" style="width:750px;font-family:Arial;font-size:15px;display:none;"></div><a href="about:blank" id="aFirmware" target="_blank" style="display:none;"></a>
+    <div style="width:358px;height:72px;_background:;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/6.png', sizingMethod='scale');">
+        <label style="float:left; text-indent:20px; line-height:52px; text-align:center;" id="Web_false"></label>
+    </div>
+</center>
+<center>
+ <div style="margin-top:-72px" id="pluginContent">
+ <div id="pluginTip1" style="display:none;" class="pluginTips"></div>
+    <div id="pluginTip2" style="display:none;" class="pluginTips"></div>
+    <div id="pluginTip3" style="display:none;" class="pluginTips"></div>
+    </div>
+    </center>

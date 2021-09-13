@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<mConfig class_id="0" tracking_level="0" version="0">
+	<isEnable>1</isEnable>
+	<p2pServer>0</p2pServer>
+	<uid>LMEDZWSWCKUUA6XS111A</uid>
+	<p2pPort>35421</p2pPort>
+	<webPort>88</webPort>
+	<pwd></pwd>
+</mConfig>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<mConfig class_id="0" tracking_level="0" version="0">
+	<isEnableOSDStringDisp>1</isEnableOSDStringDisp>
+	<isEnableTimeStampDisp>1</isEnableTimeStampDisp>
+	<isEnableDevNameDisp>1</isEnableDevNameDisp>
+	<osdStringPos>0</osdStringPos>
+	<isEnableBkg>1</isEnableBkg>
+	<isEnableMask>0</isEnableMask>
+	<maskCnt>0</maskCnt>
+	<posInfo>
+		<count>4</count>
+		<item class_id="1" tracking_level="0" version="0">
+			<topLeftX>0</topLeftX>
+			<topLeftY>0</topLeftY>
+			<bottomRightX>0</bottomRightX>
+			<bottomRightY>0</bottomRightY>
+		</item>
+		<item>
+			<topLeftX>0</topLeftX>
+			<topLeftY>0</topLeftY>
+			<bottomRightX>0</bottomRightX>
+			<bottomRightY>0</bottomRightY>
+		</item>
+		<item>
+			<topLeftX>0</topLeftX>
+			<topLeftY>0</topLeftY>
+			<bottomRightX>0</bottomRightX>
+			<bottomRightY>0</bottomRightY>
+		</item>
+		<item>
+			<topLeftX>0</topLeftX>
+			<topLeftY>0</topLeftY>
+			<bottomRightX>0</bottomRightX>
+			<bottomRightY>0</bottomRightY>
+		</item>
+	</posInfo>
+	<osdDateFormat>0</osdDateFormat>
+	<osdTimeFormat>1</osdTimeFormat>
+</mConfig>

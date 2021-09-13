@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<networks note="NeworkCfgx">
+		<interfaces note="Interfacesx">
+			<interface note="Interfacex" token="eth0">
+				<info note="InterInfox" Name="eth0" MAC="" MTU="1400"/>
+				<link note="LinkInfo">
+					<!-- AutoNegotiation Duplex Speed-->
+					<adminsetting AutoNegotiation="true" Duplex="harf/full" Speed="0"/>
+					<opersetting AutoNegotiation="true" Duplex="harf/full" Speed="0"/>
+				</link>
+			</interface>
+		</interfaces>
+		<zeroconfiguration>
+			<enable>true</enable>
+		</zeroconfiguration>
+	</networks>
+	<scopes>
+		<!-- fixed configurable -->
+		<scope type="fixed">onvif://www.onvif.org/type/Network_Video_Transmitter</scope>
+		<scope type="fixed">onvif://www.onvif.org/type/video_encoder</scope>
+		<scope type="fixed">onvif://www.onvif.org/type/audio_encoder</scope>
+		<scope type="fixed">onvif://www.onvif.org/type/ptz</scope>
+		<scope type="fixed">onvif://www.onvif.org/hardware/</scope>
+		<scope type="fixed">onvif://www.onvif.org/name/Foscam</scope>
+		<scope type="fixed">onvif://www.onvif.org/location/country/china</scope>
+	</scopes>
+	<rules>
+		<rule/>
+	</rules>
+	<events>
+		<event/>
+	</events>
+	<system note="SystemInfo">
+		<timeinfo note="TimeInfo">
+			<timezone default="Asia/Shanghai" note="TimeZone">Asia/Shanghai</timezone>
+			<daylightsavings note="DaylightSavings">false</daylightsavings>
+		</timeinfo>
+		<uris>
+			<uploaduri/>
+			<systembackupuri/>
+			<supportinfouri/>
+			<systemloguri/>
+		</uris>
+		<dev>
+			<!--0:disable 1:enable -->
+			<discoverymode node="DiscoveryMode">1</discoverymode>
+			<remotediscoverymode node="RemoteDiscoveryMode">0</remotediscoverymode>
+		</dev>
+		<users note="UsersList">
+			<user fixed="false" level="0" name="admin" pwd=""/>
+		</users>
+	</system>
+</root>

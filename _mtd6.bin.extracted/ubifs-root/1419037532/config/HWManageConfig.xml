@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<mConfig class_id="0" tracking_level="0" version="0">
+	<model>5065</model>
+	<modelName>R2 V3</modelName>
+	<pirInputGpio>-1</pirInputGpio>
+	<spkPowerGpio>0</spkPowerGpio>
+	<netLedGpio>33</netLedGpio>
+	<sysLedGpio>24</sysLedGpio>
+	<wifiPowerGpio>93</wifiPowerGpio>
+	<wpsKeyGpio>94</wpsKeyGpio>
+	<softAPKeyGpio>250</softAPKeyGpio>
+	<resetKeyGpio>94</resetKeyGpio>
+	<ioAlarmOutGpio>551</ioAlarmOutGpio>
+	<ioAlarmInGpio>51</ioAlarmInGpio>
+	<nightLightCtrlGpio>130</nightLightCtrlGpio>
+	<resetWpsKeyMuxFlag>1</resetWpsKeyMuxFlag>
+	<aoChn>1</aoChn>
+	<gainMic>31</gainMic>
+	<ircutSwitchLow>750</ircutSwitchLow>
+	<ircutSwitchHigh>1750</ircutSwitchHigh>
+	<ptzSpeed>2</ptzSpeed>
+	<ptzHorizenMoveReverseFlag>0</ptzHorizenMoveReverseFlag>
+	<ptzVerticalMoveReverseFlag>0</ptzVerticalMoveReverseFlag>
+	<audioOutputMaxVolumeFactor>255</audioOutputMaxVolumeFactor>
+</mConfig>

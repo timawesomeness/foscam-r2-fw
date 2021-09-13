@@ -1,0 +1,14 @@
+# of module          name                 type                 compatible
+spidev               *                    *                    rohm,dh2228fv
+spi_slave_ambarella  *                    *                    ambarella,spi-slave
+ambarella_udc        *                    *                    ambarella,udc
+ohci-hcd             *                    *                    ambarella,ohci
+gpio_keys            *                    *                    gpio-keys
+ambarella_input_ir   *                    *                    ambarella,ir
+ambarella_input_adc  *                    *                    ambarella,input_adckey
+ambarella_crypto     *                    *                    ambarella,crypto
+snd-soc-ambarella-i2s *                    *                    ambarella,i2s
+snd-soc-s2lmkiwi     *                    *                    ambarella,s2lmkiwi-ak4954
+snd-soc-ak4951-amb   *                    *                    ambarella,ak4951
+snd-soc-ak4954-amb   *                    *                    ambarella,ak4954
+snd-soc-ambdummy     *                    *                    ambarella,dummycodec

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<mConfig class_id="0" tracking_level="0" version="0">
+	<timeSource>0</timeSource>
+	<ntpServer>Auto</ntpServer>
+	<dateFormat>0</dateFormat>
+	<timeFormat>1</timeFormat>
+	<timeZone>28800</timeZone>
+	<isDst>0</isDst>
+	<dst>0</dst>
+	<time>1631519171</time>
+	<dstStartMonth>4</dstStartMonth>
+	<dstStartWhichOne>1</dstStartWhichOne>
+	<dstStartWhichWeek>7</dstStartWhichWeek>
+	<dstStartHour>2</dstStartHour>
+	<dstEndMonth>10</dstEndMonth>
+	<dstEndWhichOne>5</dstEndWhichOne>
+	<dstEndWhichWeek>7</dstEndWhichWeek>
+	<dstEndHour>2</dstEndHour>
+</mConfig>

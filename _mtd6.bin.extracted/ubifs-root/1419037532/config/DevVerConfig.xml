@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<mConfig class_id="0" tracking_level="0" version="0">
+	<sysVer>
+		<count>4</count>
+		<item>1</item>
+		<item>11</item>
+		<item>1</item>
+		<item>13</item>
+	</sysVer>
+	<appVer>
+		<count>4</count>
+		<item>2</item>
+		<item>71</item>
+		<item>1</item>
+		<item>73</item>
+	</appVer>
+</mConfig>

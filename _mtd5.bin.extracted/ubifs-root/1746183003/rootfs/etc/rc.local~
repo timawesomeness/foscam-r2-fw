@@ -1,0 +1,15 @@
+#!/bin/sh
+
+#gaw add for ambarella systemd for startup IPC application
+
+#ambsdk1.5 must set path /bin /sbin
+export PATH=$PATH:/bin:/sbin
+export PATH=$PATH:/bin:/sbin:/tmp/bin
+
+#config file partition
+mkdir -p /mnt/mtd/app/config
+ubiattach /dev/ubi_ctrl -m 6 -d 1
+mount -t ubifs ubi1_1 -o sync /mnt/mtd/app/config
+
+mkdir -p /var/tmp/lighttpd-1.4.49-amb/upload
+/mnt/mtd/boot.sh

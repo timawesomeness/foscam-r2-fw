@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<mConfig class_id="0" tracking_level="0" version="0">
+	<isEnableIOAlarm>0</isEnableIOAlarm>
+	<schedule>
+		<count>7</count>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+		<item>0</item>
+	</schedule>
+	<linkage>158</linkage>
+	<alarmLevel>0</alarmLevel>
+	<snapInterval>2</snapInterval>
+	<triggerInterval>15</triggerInterval>
+</mConfig>

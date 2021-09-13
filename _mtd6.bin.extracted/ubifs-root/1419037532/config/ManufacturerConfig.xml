@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<mConfig class_id="0" tracking_level="0" version="0">
+	<keyInfo class_id="1" tracking_level="0" version="0">
+		<manufacturerIndex>1</manufacturerIndex>
+		<manufacturerKey>3000</manufacturerKey>
+	</keyInfo>
+	<manufacturerName></manufacturerName>
+	<reserveName></reserveName>
+	<reserve1>0</reserve1>
+	<reserve2>0</reserve2>
+	<reserve3>0</reserve3>
+	<reserve4>0</reserve4>
+</mConfig>

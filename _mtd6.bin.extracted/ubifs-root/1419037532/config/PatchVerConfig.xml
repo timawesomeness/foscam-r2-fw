@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<mConfig class_id="0" tracking_level="0" version="0">
+	<baseVer></baseVer>
+	<patchVer>0</patchVer>
+	<reserve1></reserve1>
+	<reserve2></reserve2>
+	<reserve3></reserve3>
+	<reserve4></reserve4>
+</mConfig>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="9">
+<usrGuideDefConfig class_id="0" tracking_level="0" version="0">
+	<guideMode>1</guideMode>
+	<reserved1>1</reserved1>
+	<reserved2>0</reserved2>
+	<reserved3>0</reserved3>
+	<reserved4>0</reserved4>
+	<reserved5>0</reserved5>
+	<reserved6>0</reserved6>
+	<reserved7>0</reserved7>
+	<reserved8>0</reserved8>
+</usrGuideDefConfig>
